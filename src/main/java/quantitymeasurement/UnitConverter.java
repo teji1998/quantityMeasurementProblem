@@ -19,6 +19,14 @@ public class UnitConverter {
 				  thatUnit.unit.convertingToBaseUnit(thatUnit.value)) == 0;
 	}
 
+	public double add(UnitConverter thatUnit) {
+		if (this.unit.getClass() != thatUnit.unit.getClass() ||
+				  !this.unit.addition() || !thatUnit.unit.addition())
+			return 0.0;
+		return this.unit.convertingToBaseUnit(this.value) + thatUnit.unit.convertingToBaseUnit(thatUnit.value);
+	}
+
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

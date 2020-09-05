@@ -205,5 +205,29 @@ public class QuantityMeasurementTest {
 		boolean compareCheck = unitConverter1.compare(unitConverter2);
 		Assert.assertTrue(compareCheck);
 	}
+
+	@Test
+	public void givenOneFeetAndTwoInch_WhenAddedInInches_ShouldReturnFourteenInch() {
+		unitConverter1 = new UnitConverter(1.0, Unit.FEET);
+		unitConverter2 = new UnitConverter(2.0, Unit.INCH);
+		double result = unitConverter1.add(unitConverter2);
+		Assert.assertEquals(14.0, result, 0.0);
+	}
+
+	@Test
+	public void givenOneFeetAndOneFeet_WhenAddedInInches_ShouldReturnTwentyFourInch() {
+		unitConverter1 = new UnitConverter(1.0, Unit.FEET);
+		unitConverter2 = new UnitConverter(1.0, Unit.FEET);
+		double result = unitConverter1.add(unitConverter2);
+		Assert.assertEquals(24.0, result, 0.0);
+	}
+
+	@Test
+	public void givenTwoInchAndTwoPointFiveCentimeter_WhenAddedInInches_ShouldReturnThreeInch() {
+		unitConverter1 = new UnitConverter(2.0, Unit.INCH);
+		unitConverter2 = new UnitConverter(2.5, Unit.CENTIMETER);
+		double result = unitConverter1.add(unitConverter2);
+		Assert.assertEquals(3.0, result, 0.0);
+	}
 }
 
