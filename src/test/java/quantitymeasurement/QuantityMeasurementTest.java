@@ -143,9 +143,18 @@ public class QuantityMeasurementTest {
 	}
 
 	@Test
-	public void givenOneFeet_WhenConvertedToInches_ShouldReturnEqual() {
-		double feetToInch = UnitConverter.toConvertUnit(1.0, Unit.INCH);
-		Assert.assertEquals(12.0, feetToInch, 0.0);
+	public void givenOneFeetAndTwelveInch_WhenCompared_ShouldReturnTrue() {
+		unitConverter1 = new UnitConverter(1.0, Unit.FEET);
+		unitConverter2 = new UnitConverter(12.0, Unit.INCH);
+		boolean compareCheck = unitConverter1.compare(unitConverter2);
+		Assert.assertTrue(compareCheck);
 	}
 
+	@Test
+	public void givenThreeFeetAndOneYard_WhenCompared_ShouldReturnEqual() {
+		unitConverter1 = new UnitConverter(3.0, Unit.FEET);
+		unitConverter2 = new UnitConverter(1.0, Unit.YARD);
+		boolean compareCheck = unitConverter1.compare(unitConverter2);
+		Assert.assertTrue(compareCheck);
+	}
 }

@@ -10,9 +10,13 @@ public class UnitConverter {
 		this.value = value;
 		this.unit = unit;
 	}
-
-	public static double toConvertUnit(double quantity, Unit unit) {
-		return quantity * unit.value;
+	public boolean compare(UnitConverter thatUnit) {
+		if (this.unit.getClass() != thatUnit.unit.getClass())
+			return false;
+		if (this.unit.equals(thatUnit.unit))
+			return this.equals(thatUnit);
+		return Double.compare(this.unit.convertingToBaseUnit(this.value),
+				  thatUnit.unit.convertingToBaseUnit(thatUnit.value)) == 0;
 	}
 
 	@Override
