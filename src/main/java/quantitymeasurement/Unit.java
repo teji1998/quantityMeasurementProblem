@@ -4,7 +4,9 @@ public enum Unit {
 	FEET(12.0),
 	INCH(1.0),
 	YARD(36),
-	CENTIMETER(0.4);
+	CENTIMETER(0.4),
+	GALLON(3.78),
+	LITRE(1);
 
 	public final double convertingToBaseUnit;
 

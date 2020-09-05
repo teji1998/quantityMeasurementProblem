@@ -229,5 +229,13 @@ public class QuantityMeasurementTest {
 		double result = unitConverter1.add(unitConverter2);
 		Assert.assertEquals(3.0, result, 0.0);
 	}
+
+	@Test
+	public void givenOneGallonAndThreePointSevenEightLitre_WhenCompared_ShouldReturnTrue() {
+		unitConverter1 = new UnitConverter(1.0, Unit.GALLON);
+		unitConverter2 = new UnitConverter(3.78, Unit.LITRE);
+		boolean compareLength = unitConverter1.compare(unitConverter2);
+		Assert.assertTrue(compareLength);
+	}
 }
 
