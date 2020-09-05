@@ -157,4 +157,13 @@ public class QuantityMeasurementTest {
 		boolean compareCheck = unitConverter1.compare(unitConverter2);
 		Assert.assertTrue(compareCheck);
 	}
+
+	@Test
+	public void givenOneFeetAndOneYard_WhenCompared_ShouldReturnFalse() {
+		unitConverter1 = new UnitConverter(1.0, Unit.FEET);
+		unitConverter2 = new UnitConverter(1.0, Unit.YARD);
+		boolean compareCheck = unitConverter1.compare(unitConverter2);
+		Assert.assertFalse(compareCheck);
+	}
 }
+
