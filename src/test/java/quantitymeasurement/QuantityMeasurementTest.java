@@ -142,4 +142,10 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(unitConverter1.getClass(), UnitConverter.class);
 	}
 
+	@Test
+	public void givenOneFeet_WhenConvertedToInches_ShouldReturnEqual() {
+		double feetToInch = UnitConverter.toConvertUnit(1.0, Unit.INCH);
+		Assert.assertEquals(12.0, feetToInch, 0.0);
+	}
+
 }

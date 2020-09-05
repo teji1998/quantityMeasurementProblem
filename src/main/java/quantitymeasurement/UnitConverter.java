@@ -11,6 +11,10 @@ public class UnitConverter {
 		this.unit = unit;
 	}
 
+	public static double toConvertUnit(double quantity, Unit unit) {
+		return quantity * unit.value;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
