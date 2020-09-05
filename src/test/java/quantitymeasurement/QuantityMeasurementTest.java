@@ -100,4 +100,19 @@ public class QuantityMeasurementTest {
 		boolean nullValueCheck = Objects.isNull(inch1);
 		Assert.assertTrue(nullValueCheck);
 	}
+
+
+	@Test
+	public void givenInchValue_WhenCheckedForReferenceWithAnotherInchValue_ShouldReturnNotSame() {
+		Inch inch1 = new Inch(1.0);
+		Inch inch2 = new Inch(0.0);
+		Assert.assertNotSame(inch1, inch2);
+	}
+
+	@Test
+	public void givenInchValue_WhenCheckedForReference_ShouldReturnSame() {
+		Inch inch1 = new Inch(1.0);
+		Assert.assertSame(inch1, inch1);
+	}
+
 }
