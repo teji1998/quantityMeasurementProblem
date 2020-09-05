@@ -10,7 +10,9 @@ public enum Unit {
 	MILLILITRE(0.001),
 	GRAM(0.001),
 	KILOGRAM(1.0),
-	TONNE(1000.0);
+	TONNE(1000.0),
+	FAHRENHEIT(212),
+	CELSIUS(100);
 
 	public final double convertingToBaseUnit;
 

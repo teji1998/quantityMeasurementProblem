@@ -19,6 +19,12 @@ public class UnitConverter {
 		return this.unit.convertingToBaseUnit(this.value) + thatUnit.unit.convertingToBaseUnit(thatUnit.value);
 	}
 
+	public static double convertingTheTemperature(double temperature, Unit temperatureCheck) {
+		if (temperatureCheck == Unit.CELSIUS)
+			return (temperature - 32) / 1.8;
+		return (temperature * 1.8) + 32;
+	}
+
 
 	@Override
 	public boolean equals(Object o) {

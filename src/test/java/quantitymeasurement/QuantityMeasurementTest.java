@@ -285,5 +285,13 @@ public class QuantityMeasurementTest {
 		double result = unitConverter1.add(unitConverter2);
 		Assert.assertEquals(1001, result, 0.0);
 	}
+
+	@Test
+	public void givenTwoHundredAndTwelveFahrenheitAndHundredCelsius_WhenConvertedForEquality_ShouldReturnEqual() {
+		double degreeCelsius = unitConverter1.convertingTheTemperature(212, Unit.CELSIUS);
+		double degreeFahrenheit = unitConverter2.convertingTheTemperature(100, Unit.FAHRENHEIT);
+		Assert.assertEquals(100.0, degreeCelsius, 0.0);
+		Assert.assertEquals(212.0, degreeFahrenheit, 0.0);
+	}
 }
 
