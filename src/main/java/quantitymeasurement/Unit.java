@@ -18,10 +18,6 @@ public enum Unit {
 		this.convertingToBaseUnit = convertingToBaseUnit;
 	}
 
-	public boolean addition() {
-		return true;
-	}
-
 	public double convertingToBaseUnit(double value) {
 		return value * convertingToBaseUnit;
 	}
