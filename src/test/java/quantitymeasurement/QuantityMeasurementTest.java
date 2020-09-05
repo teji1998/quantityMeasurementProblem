@@ -72,4 +72,18 @@ public class QuantityMeasurementTest {
 		boolean equalValue = Objects.equals(feet1, feet2);
 		Assert.assertFalse(equalValue);
 	}
+
+	@Test
+	public void givenZeroInchAndZeroInch_WhenComparedInLengths_ShouldReturnEquals() {
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = new Inch(0.0);
+		Assert.assertEquals(inch1, inch2);
+	}
+
+	@Test
+	public void givenZeroInchAndOneInch_WhenComparedInLengths_ShouldReturnNotEquals() {
+		Inch inch1 = new Inch(1.0);
+		Inch inch2 = new Inch(0.0);
+		Assert.assertNotEquals(inch1, inch2);
+	}
 }
