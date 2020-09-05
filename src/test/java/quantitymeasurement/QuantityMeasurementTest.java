@@ -245,5 +245,21 @@ public class QuantityMeasurementTest {
 		boolean compareLength = unitConverter1.compare(unitConverter2);
 		Assert.assertTrue(compareLength);
 	}
+
+	@Test
+	public void givenOneGallonAndThreePointSevenEightLitres_WhenAddedInLitres_ShouldReturnSevenPointFiveSevenLitres() {
+		unitConverter1 = new UnitConverter(1.0, Unit.GALLON);
+		unitConverter2 = new UnitConverter(3.78, Unit.LITRE);
+		double result = unitConverter1.add(unitConverter2);
+		Assert.assertEquals(7.57, result, 0.1);
+	}
+
+	@Test
+	public void givenOneLitreAndThousandMillilitres_WhenAddedInLitres_ShouldReturnTwoLitres() {
+		unitConverter1 = new UnitConverter(1.0, Unit.LITRE);
+		unitConverter2 = new UnitConverter(1000.0, Unit.MILLILITRE);
+		double result = unitConverter1.add(unitConverter2);
+		Assert.assertEquals(2, result, 0.1);
+	}
 }
 
