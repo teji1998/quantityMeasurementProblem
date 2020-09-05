@@ -237,5 +237,13 @@ public class QuantityMeasurementTest {
 		boolean compareLength = unitConverter1.compare(unitConverter2);
 		Assert.assertTrue(compareLength);
 	}
+
+	@Test
+	public void givenOneLitreAndThousandMilliLitre_WhenCompared_ShouldReturnTrue() {
+		unitConverter1 = new UnitConverter(1.0, Unit.LITRE);
+		unitConverter2 = new UnitConverter(1000.0, Unit.MILLILITRE);
+		boolean compareLength = unitConverter1.compare(unitConverter2);
+		Assert.assertTrue(compareLength);
+	}
 }
 
