@@ -51,4 +51,9 @@ public class QuantityMeasurementTest {
 		Assert.assertSame(feet1, feet1);
 	}
 
+	@Test
+	public void givenFeetValue_WhenOfSameType_ShouldReturnTrue() {
+		Feet feet1 = new Feet (1.0);
+		Assert.assertEquals(feet1.getClass(), Feet.class);
+	}
 }
