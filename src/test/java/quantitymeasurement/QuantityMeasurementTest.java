@@ -175,9 +175,17 @@ public class QuantityMeasurementTest {
 	}
 
 	@Test
-	public void given36InchAndOneYard_WhenCompared_ShouldReturnTrue() {
+	public void givenThirtySixInchAndOneYard_WhenCompared_ShouldReturnTrue() {
 		unitConverter1 = new UnitConverter(36, Unit.INCH);
 		unitConverter2 = new UnitConverter(1.0, Unit.YARD);
+		boolean compareCheck = unitConverter1.compare(unitConverter2);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void givenOneYardAndThirtySixInch_WhenCompared_ShouldReturnTrue() {
+		unitConverter1 = new UnitConverter(1.0, Unit.YARD);
+		unitConverter2 = new UnitConverter(36, Unit.INCH);
 		boolean compareCheck = unitConverter1.compare(unitConverter2);
 		Assert.assertTrue(compareCheck);
 	}
