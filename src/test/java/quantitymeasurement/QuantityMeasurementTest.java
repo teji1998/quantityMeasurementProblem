@@ -58,6 +58,12 @@ public class QuantityMeasurementTest {
 	}
 
 	@Test
+	public void givenFeetValue_WhenOfDifferentType_ShouldReturnNotEquals() {
+		Feet feet1 = new Feet (1.0);
+		Assert.assertNotEquals(feet1.getClass(), Inch.class);
+	}
+
+	@Test
 	public void givenTwoFeetValues_WhenAreEqual_ShouldReturnTrue() {
 		Feet feet1 = new Feet(1.0);
 		Feet feet2 = new Feet(1.0);
@@ -131,4 +137,15 @@ public class QuantityMeasurementTest {
 		Assert.assertFalse(equalValue);
 	}
 
+	@Test
+	public void givenInchValue_WhenOfSameType_ShouldReturnEqual() {
+		Inch inch1 = new Inch(1.0);
+		Assert.assertEquals(inch1.getClass(), Inch.class);
+	}
+
+	@Test
+	public void givenInchValue_WhenOfDifferentType_ShouldReturnNotEqual() {
+		Inch inch1 = new Inch(1.0);
+		Assert.assertNotEquals(inch1.getClass(), Feet.class);
+	}
 }
