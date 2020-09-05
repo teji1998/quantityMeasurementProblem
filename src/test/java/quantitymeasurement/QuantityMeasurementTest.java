@@ -277,5 +277,13 @@ public class QuantityMeasurementTest {
 		boolean compareCheck = unitConverter1.compare(unitConverter2);
 		Assert.assertTrue(compareCheck);
 	}
+
+	@Test
+	public void givenOneTonneAndThousandGrams_WhenAddedInKilograms_ShouldReturnOneThousandAndOneKilograms() {
+		unitConverter1 = new UnitConverter(1.0, Unit.TONNE);
+		unitConverter2 = new UnitConverter(1000.0, Unit.GRAM);
+		double result = unitConverter1.add(unitConverter2);
+		Assert.assertEquals(1001, result, 0.0);
+	}
 }
 
