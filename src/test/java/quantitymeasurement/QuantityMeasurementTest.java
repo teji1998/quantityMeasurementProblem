@@ -115,4 +115,20 @@ public class QuantityMeasurementTest {
 		Assert.assertSame(inch1, inch1);
 	}
 
+	@Test
+	public void givenInchValues_WhenAreEqual_ShouldReturnTrue() {
+		Inch inch1 = new Inch(1.0);
+		Inch inch2 = new Inch(1.0);
+		boolean equalValue = Objects.equals(inch1, inch2);
+		Assert.assertTrue(equalValue);
+	}
+
+	@Test
+	public void givenTwoInchValues_WhenAreNotEqual_ShouldReturnFalse() {
+		Inch inch1 = new Inch(1.0);
+		Inch inch2 = new Inch(0.0);
+		boolean equalValue = Objects.equals(inch1, inch2);
+		Assert.assertFalse(equalValue);
+	}
+
 }
