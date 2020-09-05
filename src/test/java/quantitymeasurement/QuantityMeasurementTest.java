@@ -56,4 +56,20 @@ public class QuantityMeasurementTest {
 		Feet feet1 = new Feet (1.0);
 		Assert.assertEquals(feet1.getClass(), Feet.class);
 	}
+
+	@Test
+	public void givenTwoFeetValues_WhenAreEqual_ShouldReturnTrue() {
+		Feet feet1 = new Feet(1.0);
+		Feet feet2 = new Feet(1.0);
+		boolean equalValue = Objects.equals(feet1, feet2);
+		Assert.assertTrue(equalValue);
+	}
+
+	@Test
+	public void givenTwoFeetValues_WhenAreNotEqual_ShouldReturnFalse() {
+		Feet feet1 = new Feet(1.0);
+		Feet feet2 = new Feet(0.0);
+		boolean equalValue = Objects.equals(feet1, feet2);
+		Assert.assertFalse(equalValue);
+	}
 }
