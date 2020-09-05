@@ -86,4 +86,18 @@ public class QuantityMeasurementTest {
 		Inch inch2 = new Inch(0.0);
 		Assert.assertNotEquals(inch1, inch2);
 	}
+
+	@Test
+	public void givenInch_WhenIsNotNull_ShouldReturnTrue() {
+		Inch inch1 = new Inch(1.0);
+		boolean nullValueCheck = Objects.nonNull(inch1);
+		Assert.assertTrue(nullValueCheck);
+	}
+
+	@Test
+	public void givenInch_WhenIsNull_ShouldReturnTrue() {
+		Inch inch1 = null;
+		boolean nullValueCheck = Objects.isNull(inch1);
+		Assert.assertTrue(nullValueCheck);
+	}
 }
