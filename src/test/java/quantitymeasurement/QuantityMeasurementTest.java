@@ -197,5 +197,13 @@ public class QuantityMeasurementTest {
 		boolean compareCheck = unitConverter1.compare(unitConverter2);
 		Assert.assertTrue(compareCheck);
 	}
+
+	@Test
+	public void givenTwoInchAndFiveCentimeter_WhenCompared_ShouldReturnTrue() {
+		unitConverter1 = new UnitConverter(2.0, Unit.INCH);
+		unitConverter2 = new UnitConverter(5, Unit.CENTIMETER);
+		boolean compareCheck = unitConverter1.compare(unitConverter2);
+		Assert.assertTrue(compareCheck);
+	}
 }
 
