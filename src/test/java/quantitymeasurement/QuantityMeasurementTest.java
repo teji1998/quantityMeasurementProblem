@@ -287,11 +287,15 @@ public class QuantityMeasurementTest {
 	}
 
 	@Test
-	public void givenTwoHundredAndTwelveFahrenheitAndHundredCelsius_WhenConvertedForEquality_ShouldReturnEqual() {
+	public void givenTwoHundredAndTwelveFahrenheit_WhenConvertedToHundredDegreeCelsius_ShouldReturnEqual() {
 		double degreeCelsius = unitConverter1.convertingTheTemperature(212, Unit.CELSIUS);
-		double degreeFahrenheit = unitConverter2.convertingTheTemperature(100, Unit.FAHRENHEIT);
 		Assert.assertEquals(100.0, degreeCelsius, 0.0);
-		Assert.assertEquals(212.0, degreeFahrenheit, 0.0);
+	}
+
+	@Test
+	public void givenHundredDegreeCelsius_WhenConvertedToTwoHundredAndTwelveFahrenheit_ShouldReturnEqual() {
+		double degreeFahrenheit = unitConverter1.convertingTheTemperature(100, Unit.FAHRENHEIT);
+		Assert.assertEquals(212, degreeFahrenheit, 0.0);
 	}
 }
 

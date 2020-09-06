@@ -25,7 +25,6 @@ public class UnitConverter {
 		return (temperature * 1.8) + 32;
 	}
 
-
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
