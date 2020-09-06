@@ -8,7 +8,7 @@ public class UnitConverter {
 
 	public UnitConverter(double value, Unit unit) {
 		this.value = value;
-		this.unit = unit;
+		this.unit= unit;
 	}
 	public boolean compare(UnitConverter thatUnit) {
 		return Double.compare(this.unit.convertingToBaseUnit(this.value),
@@ -32,10 +32,5 @@ public class UnitConverter {
 		UnitConverter that = (UnitConverter) o;
 		return Double.compare(that.value, value) == 0 &&
 				  unit == that.unit;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(value,unit);
 	}
 }
